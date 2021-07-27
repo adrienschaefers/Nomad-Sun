@@ -141,6 +141,10 @@ add_action( 'widgets_init', 'nomadsun_widgets_init' );
  */
 function nomadsun_scripts() {
 	wp_enqueue_style( 'nomadsun-style', get_stylesheet_uri(), array(), _S_VERSION );
+
+	// Ici on appelle le gicher CSS qu'on a crée
+	wp_enqueue_style( 'nomadsun-custom', get_template_directory_uri(  )  .'/css/custom.css');
+
 	wp_style_add_data( 'nomadsun-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'nomadsun-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

@@ -1,0 +1,26 @@
+
+
+body{
+    font-size: 18px;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialias;
+}
+
+/*  Ici on applique la méthode que le design system de Tachyon. on crée plusieurs 
+class pour les appliquer directement sur chaque élément  */
+.archivo{
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.cardo{
+    font-family: 'Cardo', georgia, serif;
+}
+
+.tenor {
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+.hero-heading,
+.hero-subhead {
+    font-size: 64px;
+}
