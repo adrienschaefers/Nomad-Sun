@@ -11,37 +11,44 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+<?php if( have_rows('content') ): while ( have_rows('content') ) : the_row();
 
-<!-- Hero needs a background-image on it -->
-<!-- Ici on insère du inline CSS dans l'élément HTML et on ajoute du php qui appelle lg BG image -->
-	<section class="hero min-vh-100 cover bg-center flex items-center justify-center" style="<?php if( get_field('Hero_image') ): ?>
-    background-image: url(<?php the_field('Hero_image'); ?>);
-<?php endif; ?>">
+// if it’s a header, go through the data
+if( get_row_layout() == 'header' ): ?>
 
-		<div class="hero-content white tc">
+			<!-- Here we have our header -->
+			<div class="flex">
 
-			<!-- our location title -->
-			<h1 class="hero-heading bold mb0 m0 ttu archivo"><?php the_title(); ?></h1>
+				<!-- Our header image -->
+				<div class="w-60 min-vh-100 bg-right cover" style="<?php if( get_field('Hero_image') ): ?>
+    				background-image: url(<?php the_field('Hero_image'); ?>); <?php endif; ?>"></div>
 
-			<!-- our subheading -->
-			<?php if( get_field('Subhead') ): ?>
-    			<p class="hero-subhead mb6 mt0 ttu tenor"><?php the_field('Subhead'); ?></p>
-			<?php endif; ?>
+				<!-- our header content -->
+				<div class="w-40">
+					<!-- data shared from our ero -->
 
-			<!-- our formatted date -->
-			<?php if( get_field('Date') ): ?>
-			<p class="f6 bold ma0 white ttu archivo">
-				<!-- Here we convert the date into a nice format -->
-    			<?php echo date("F Y", strtotime(get_field('Date') )) ?>
-			</p>
-			<?php endif; ?>
+					<?php the_field('Date'); ?>
+
+					<!-- standard wordpress data -->
+					<?php the_title(); ?>
+					<?php the_field('subhead'); ?>
+
+					<!-- specific to this component -->
+					<?php the_sub_field('header_intro'); ?>
+
+
+				</div>
+			</div>
+
+
+
+
 		
-		</div>
-	</section>
-
-	<header class="entry-header">
-	</header><!-- .entry-header -->
-
+		<!-- if it’s a text component, show us the data -->
+		<?php elseif( get_row_layout() == 'text_block' ): ?>
+			<?php the_sub_field('text_content'); ?>
+		<?php endif; 
+		endwhile; endif; ?>
 
 	<div class="entry-content">
 	</div><!-- .entry-content -->

@@ -12,15 +12,24 @@ class pour les appliquer directement sur chaque élément  */
     font-family: 'Archivo Black', sans-serif;
 }
 
+
 .cardo{
     font-family: 'Cardo', georgia, serif;
 }
 
-.tenor {
-    font-family: 'Tenor Sans', sans-serif;
+
+
+.hero-content {
+    max-width: 752px;
 }
 
-.hero-heading,
 .hero-subhead {
     font-size: 64px;
+    font-family: 'Tenor Sans', sans-serif;
+    margin-top: 16px;
+}
+
+.hero-heading{
+    font-size: 64px;
+    letter-spacing: 0.05em;
 }
