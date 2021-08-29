@@ -17,30 +17,36 @@
 if( get_row_layout() == 'header' ): ?>
 
 			<!-- Here we have our header -->
-			<div class="flex">
+			<div class="flex-l">
 
-				<!-- Our header image -->
-				<div class="w-60 min-vh-100 bg-right cover" style="<?php if( get_field('Hero_image') ): ?>
+				<!-- Our header image 
+					Ajout du "-l" pour ajuster la taille des boites en fonction du VP"
+				-->
+				<div class="w-100 w-60-l vh-50 vh-100-l bg-right cover bg-center" style="<?php if( get_field('Hero_image') ): ?>
     				background-image: url(<?php the_field('Hero_image'); ?>); <?php endif; ?>"></div>
 
 				<!-- our header content -->
-				<div class="w-40 flex items-center justify-center ph4 ">
+				<div class="w-100 w-40-l flex items-center justify-center ph3 ph4-l relative">
 					<!-- data shared from our ero -->
 					<div class="tc">
-						<p class="f6 b archivo mt0 mb5 ttu tracked">
+						<!-- Here we use absolute positioning on large screen -->
+						<p class="f6 b archivo mt0 mb5 ttu tracked absolute-l top-0-l left-0-l w-100-l pt4">
 							<?php echo date("F Y", strtotime(get_field('Date') )) ?>
+							<span class="line mt4"></span>
 						</p>
 						
+						
+						<!-- We change the typescale for larger screens and squish the line height -->
 						<!-- standard wordpress data -->
-						<h1 class="f1 archivo mt0 mb1 ttu">
+						<h1 class="f2 f1-l archivo mt0 mb1 ttu lh-title">
 							<?php the_title(); ?>
 						</h1>
 						
-						<p class="f1 cardo mt0 mb3 ttu">
+						<p class="f2 f1-l cardo mt0 mb3  mb5-l ttu lh-title">
 						<?php the_field('Subhead'); ?>
 						</p>
 
-						<p class="f4 measure i cardo center">
+						<p class="f4 measure i cardo center mv0">
 							<?php the_sub_field('header_intro'); ?>
 						</p>
 					</div>
