@@ -1,3 +1,10 @@
+<!-- Using the_permalink() gives us a link to the post -->
+
+
+<!-- <h1>
+	<a href="<?php the_permalink(); ?>">Check out <?php the_title(); ?></a>
+</h1> -->
+
 <!-- Hero needs a background-image on it -->
 <!-- Ici on insère du inline CSS dans l'élément HTML et on ajoute du php qui appelle lg BG image -->
 <section class="hero min-vh-100 cover bg-center flex items-center justify-center" style="<?php if( get_field('Hero_image') ): ?>

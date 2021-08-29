@@ -40,7 +40,7 @@ if( get_row_layout() == 'header' ): ?>
 						<?php the_field('Subhead'); ?>
 						</p>
 
-						<p class="f4 measure i cardo">
+						<p class="f4 measure i cardo center">
 							<?php the_sub_field('header_intro'); ?>
 						</p>
 					</div>
