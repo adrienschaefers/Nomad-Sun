@@ -24,17 +24,28 @@ if( get_row_layout() == 'header' ): ?>
     				background-image: url(<?php the_field('Hero_image'); ?>); <?php endif; ?>"></div>
 
 				<!-- our header content -->
-				<div class="w-40">
+				<div class="w-40 flex items-center justify-center ph4 ">
 					<!-- data shared from our ero -->
+					<div class="tc">
+						<p class="f6 b archivo mt0 mb5 ttu tracked">
+							<?php echo date("F Y", strtotime(get_field('Date') )) ?>
+						</p>
+						
+						<!-- standard wordpress data -->
+						<h1 class="f1 archivo mt0 mb1 ttu">
+							<?php the_title(); ?>
+						</h1>
+						
+						<p class="f1 cardo mt0 mb3 ttu">
+						<?php the_field('Subhead'); ?>
+						</p>
 
-					<?php the_field('Date'); ?>
-
-					<!-- standard wordpress data -->
-					<?php the_title(); ?>
-					<?php the_field('subhead'); ?>
-
+						<p class="f4 measure i cardo">
+							<?php the_sub_field('header_intro'); ?>
+						</p>
+					</div>
 					<!-- specific to this component -->
-					<?php the_sub_field('header_intro'); ?>
+					
 
 
 				</div>
@@ -46,7 +57,11 @@ if( get_row_layout() == 'header' ): ?>
 		
 		<!-- if it’s a text component, show us the data -->
 		<?php elseif( get_row_layout() == 'text_block' ): ?>
-			<?php the_sub_field('text_content'); ?>
+			<!-- <this is our text block -->
+			<div  class="pv6 measure-wide center text-block ">
+				<?php the_sub_field('text_content'); ?>
+			</div>
+
 		<?php endif; 
 		endwhile; endif; ?>
 

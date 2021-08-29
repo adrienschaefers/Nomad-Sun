@@ -2,13 +2,14 @@
 
 body{
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.5;
     -webkit-font-smoothing: antialias;
 }
 
 /*  Ici on applique la méthode que le design system de Tachyon. on crée plusieurs 
 class pour les appliquer directement sur chaque élément  */
-.archivo{
+.archivo,
+.text-block h3{
     font-family: 'Archivo Black', sans-serif;
 }
 
@@ -32,4 +33,12 @@ class pour les appliquer directement sur chaque élément  */
 .hero-heading{
     font-size: 64px;
     letter-spacing: 0.05em;
+}
+
+.text-block h3{
+ font-size : 20px; 
+ margin-top: 0;
+ margin-bottom: 20px;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
 }
