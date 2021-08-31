@@ -7,9 +7,8 @@
 
 <!-- Hero needs a background-image on it -->
 <!-- Ici on insère du inline CSS dans l'élément HTML et on ajoute du php qui appelle lg BG image -->
-<section class="hero min-vh-100 cover bg-center flex items-center justify-center" style="<?php if( get_field('Hero_image') ): ?>
-    background-image: url(<?php the_field('Hero_image'); ?>);
-<?php endif; ?>">
+<section class="hero min-vh-100 cover bg-center flex items-center 
+justify-center" style="<?php nice_background('Hero_image'); ?>">
 
 		<div class="hero-content white tc">
 
@@ -25,7 +24,9 @@
 			<?php if( get_field('Date') ): ?>
 			<p class="f6 bold ma0 white ttu archivo">
 				<!-- Here we convert the date into a nice format -->
-    			<?php echo date("F Y", strtotime(get_field('Date') )) ?>
+    			<?php nice_date(get_field('Date')); 
+								
+?>
 			</p>
 			<?php endif; ?>
 		

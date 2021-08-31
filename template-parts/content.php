@@ -22,8 +22,8 @@ if( get_row_layout() == 'header' ): ?>
 				<!-- Our header image 
 					Ajout du "-l" pour ajuster la taille des boites en fonction du VP"
 				-->
-				<div class="w-100 w-60-l vh-50 vh-100-l bg-right cover bg-center" style="<?php if( get_field('Hero_image') ): ?>
-    				background-image: url(<?php the_field('Hero_image'); ?>); <?php endif; ?>"></div>
+				<div class="w-100 w-60-l vh-50 vh-100-l bg-right cover bg-center" 
+				style="<?php nice_background('Hero_image'); ?>"></div>
 
 				<!-- our header content -->
 				<div class="w-100 w-40-l flex items-center justify-center ph3 ph4-l relative">
@@ -31,7 +31,7 @@ if( get_row_layout() == 'header' ): ?>
 					<div class="tc">
 						<!-- Here we use absolute positioning on large screen -->
 						<p class="f6 b archivo mt0 mb5 ttu tracked absolute-l top-0-l left-0-l w-100-l pt4">
-							<?php echo date("F Y", strtotime(get_field('Date') )) ?>
+						<?php nice_date(get_field('Date')); ?>
 							<span class="line mt4"></span>
 						</p>
 						
